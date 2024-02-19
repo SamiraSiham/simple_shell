@@ -11,14 +11,27 @@ int main(int ac, char **av)
 {
 	char *line = NULL;
 	char **command = NULL;
-	int stat;
+	int stat = 0;
 	(void) ac;
+	(void) av;
 
 	while (1)
 	{
 		line = read_cmd();
-		command = create_token(line);
-		status = _exe(command, av);
+		if (line == NULL)
+		{
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			return (stat);
+		}
+		free(line);
+		command = split_cmd(line);
+		/*status = _exe(command, av);*/
 	}
 	return (0);
 }
+
+
+
+
+

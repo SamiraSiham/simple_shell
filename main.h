@@ -8,4 +8,11 @@
 #include <sys/wait.h>
 #include <errno.h>
 #include <fcntl.h>
-#endif //MAIN_H
+char *read_cmd(void);
+
+char *_strdup(const char *s);
+int _strcmp(char *s1, char *s2);
+int _strlen(char *s);
+char *_strcat(char *dest, char *src);
+char *_strcpy(cahr *dest, char *src);
+#endif
