@@ -10,6 +10,7 @@
 #include <fcntl.h>
 char *read_cmd(void);
 
+char *_create_array(unsigned int size);
 char *_strdup(const char *s);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
