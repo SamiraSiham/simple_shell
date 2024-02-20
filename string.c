@@ -42,15 +42,15 @@ char *_strdup(const char *s)
 	char *new_str;
 	int i;
 
-	if (str == NULL)
+	if (s == NULL)
 		return (NULL);
 	i = 0;
-	new_str = _create_array(_strlen(str) + 1);
+	new_str = _create_array(_strlen(s) + 1);
 	if (!new_str)
 		return (NULL);
-	while (i <= _strlen(str))
+	while (i <= _strlen(s))
 	{
-		new_str[i] = str[i];
+		new_str[i] = s[i];
 		i++;
 	}
 	return (new_str);
