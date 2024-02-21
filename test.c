@@ -6,6 +6,10 @@ int main()
 
 	str = _strdup("this           is\t      morocco\n");
 	token = strtok(str, " \t\n");
-	printf("%s\n", token);
+	while (token)
+	{
+		printf("%s\n", token);
+		token = strtok(NULL, " \t\n");
+	}
 	return (0);
 }
