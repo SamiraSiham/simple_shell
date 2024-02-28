@@ -10,7 +10,7 @@ char *read_cmd(void)
 	int n;
 
 	if (isatty(STDIN_FILENO))
-		write(STDOUT_FILENO, "$ ", 2);
+		write(STDOUT_FILENO, "#cisfun$ ", 9);
 	n = getline(&line, &length, stdin);
 	if (n == -1)
 	{
