@@ -12,8 +12,8 @@ int main(int ac, char **av)
 	char *line = NULL;
 	char **command = NULL;
 	int stat = 0;
+	int i;
 	(void) ac;
-	(void) av;
 
 	while (1)
 	{
@@ -24,14 +24,19 @@ int main(int ac, char **av)
 				write(STDOUT_FILENO, "\n", 1);
 			return (stat);
 		}
-		free(line);
 		command = split_cmd(line);
-		/*status = _exe(command, av);*/
+		if (!command)
+		{
+			continue;
+		}
+		for (i = 0; command[i]; i++)
+		{
+			printf("%s\n", command[i]);
+			free(command[i]), command[i] = NULL;			
+		}
+		free(command), command = NULL;
+		
+		status = _exe(command, av);
 	}
 	return (0);
 }
-
-
-
-
-

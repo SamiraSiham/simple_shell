@@ -9,6 +9,7 @@
 #include <errno.h>
 #include <fcntl.h>
 char *read_cmd(void);
+char **split_cmd(char *);
 
 char *_create_array(unsigned int size);
 char *_strdup(const char *s);
