@@ -8,9 +8,11 @@
 #include <sys/wait.h>
 #include <errno.h>
 #include <fcntl.h>
+extern char **environ;
 char *read_cmd(void);
 char **split_cmd(char *);
-
+int _exe(char **cmd, char **argvec);
+void free_array_str(char **arr);
 char *_create_array(unsigned int size);
 char *_strdup(const char *s);
 int _strcmp(char *s1, char *s2);

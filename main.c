@@ -12,7 +12,6 @@ int main(int ac, char **av)
 	char *line = NULL;
 	char **command = NULL;
 	int stat = 0;
-	int i;
 	(void) ac;
 
 	while (1)
@@ -29,14 +28,7 @@ int main(int ac, char **av)
 		{
 			continue;
 		}
-		for (i = 0; command[i]; i++)
-		{
-			printf("%s\n", command[i]);
-			free(command[i]), command[i] = NULL;			
-		}
-		free(command), command = NULL;
-		
-		status = _exe(command, av);
+		stat = _exe(command, av);
 	}
 	return (0);
 }
