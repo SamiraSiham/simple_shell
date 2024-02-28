@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * read_cmd - read command from stdin
  * Return: line read from stdin
