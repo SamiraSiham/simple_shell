@@ -28,7 +28,7 @@ int main(int ac, char **av)
 		{
 			continue;
 		}
-		stat = _exe(line, av);
+		stat = _exe(command, av);
 	}
 	return (0);
 }
