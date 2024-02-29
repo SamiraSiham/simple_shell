@@ -23,7 +23,9 @@ int main(int ac, char **av)
 				write(STDOUT_FILENO, "\n", 1);
 			return (stat);
 		}
-		command = strtok(line, " \t\n");
+		command = split_cmd(line);
+		if (!command)
+			continue;	
 		stat = _exe(command, av);
 	}
 	return (0);
