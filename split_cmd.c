@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * split_cmd - splits the command into tokens
  * @line: the command to split

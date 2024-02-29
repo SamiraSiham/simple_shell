@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * free_array_str - free array of string

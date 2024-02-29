@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * main - simple shell entry point
@@ -23,11 +23,7 @@ int main(int ac, char **av)
 				write(STDOUT_FILENO, "\n", 1);
 			return (stat);
 		}
-		command = split_cmd(line);
-		if (!command)
-		{
-			continue;
-		}
+		command = strtok(line, " \t\n");
 		stat = _exe(command, av);
 	}
 	return (0);
