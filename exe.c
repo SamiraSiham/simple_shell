@@ -17,7 +17,7 @@ int _exe(char **cmd, char **argvec)
 		{
 			perror(argvec[0]);
 			free_array_str(cmd);
-			exit(0);
+			exit(127);
 		}
 	}
 	else
