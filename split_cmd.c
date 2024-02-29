@@ -22,7 +22,7 @@ char **split_cmd(char *line)
 	while (str)
 	{
 		count++;
-
+		str = strtok(NULL, "\t\n");
 	}
 	free(tmp);
 	tmp = NULL;
