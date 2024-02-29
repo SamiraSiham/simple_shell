@@ -7,6 +7,7 @@
 char **split_cmd(char *line)
 {
 	char *str = NULL, *tmp = NULL, **cmd = NULL;
+	int count = 0, i = 0;
 
 	if (!line)
 		return (NULL);
@@ -18,15 +19,27 @@ char **split_cmd(char *line)
 		free(tmp), tmp = NULL;
 		return (NULL);
 	}
-	cmd = malloc(sizeof(char *) * 10);
+	while (str)
+	{
+		count++;
+		str = strtok(NULL, " \t\n");
+	}
+	free(tmp);
+	tmp = NULL;
+	cmd = malloc(sizeof(char *) * (count + 1));
 	if (!cmd)
 	{
 		free(line);
 		return (NULL);
 	}
 	str = strtok(line, " \t\n");
-	cmd[0] = _strdup(str);
+	while (str)
+	{
+		cmd[i] = _strdup(str);
+		i++;
+		str = strtok(NULL, " \t\n");
+	}
 	free(line), line = NULL;
-	cmd[0] = NULL;
+	cmd[i] = NULL;
 	return (cmd);
 }
